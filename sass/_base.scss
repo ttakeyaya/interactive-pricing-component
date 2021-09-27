@@ -19,7 +19,7 @@ $manrope: "Manrope", sans-serif;
   --color-discount-text: hsl(15, 100%, 70%);
   --color-cta-text: hsl(226, 100%, 87%);
 
-  --color-pricing-component-background: hsl (0, 0%, 100%);
+  --color-pricing-component-background: hsl (0%, 0%, 100%);
   --color-main-background: hsl(230, 100%, 99%);
   --color-empty-slider-bar: hsl(224, 65%, 95%);
   --color-toggle-background: hsl(223, 50%, 87%);
@@ -48,4 +48,13 @@ html {
 body {
   font-family: $manrope;
   font-size: 1.5rem;
+  // background-color: var(--color-pricing-component-background);
+  background-image: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-main-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

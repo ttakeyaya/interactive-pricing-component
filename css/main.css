@@ -1,0 +1,197 @@
+/** 
+-Import Google Font and Define font variable
+-Define color varibalbes
+-Reset CSS properties(margin, padding)
+-set 1rem to be 10px
+*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+:root {
+  --color-full-slider-bar: hsl(174, 77%, 80%);
+  --color-slider-background: hsl(174, 86%, 45%);
+  --color-discount-background: hsl(14, 92%, 95%);
+  --color-discount-text: hsl(15, 100%, 70%);
+  --color-cta-text: hsl(226, 100%, 87%);
+  --color-pricing-component-background: hsl (0%, 0%, 100%);
+  --color-main-background: hsl(230, 100%, 99%);
+  --color-empty-slider-bar: hsl(224, 65%, 95%);
+  --color-toggle-background: hsl(223, 50%, 87%);
+  --color-blue-text: hsl(225, 20%, 60%);
+  --color-text-cta-bg: hsl(227, 35%, 25%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  background-image: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-main-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: 6.7rem;
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 39.5rem;
+  height: 14.5rem;
+  padding-top: 4rem;
+}
+.header__title {
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+.header__text {
+  color: var(--color-blue-text);
+}
+
+.main {
+  margin-top: 5.4rem;
+}
+.main .pricing-component {
+  min-width: 54rem;
+  height: 39.7rem;
+  background-color: var(--color-main-background);
+}
+@media screen and (max-width: 555px) {
+  .main .pricing-component {
+    max-width: 32.7rem;
+  }
+}
+.main .pricing-component__viewprice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media screen and (max-width: 555px) {
+  .main .pricing-component__viewprice {
+    flex-direction: column;
+  }
+}
+.main .pricing-component__viewprice .slider {
+  margin: 0 auto;
+  width: 44.4rem;
+  height: 0.8rem;
+  background-color: var(--color-empty-slider-bar);
+}
+.main .pricing-component__viewprice .slider__slide {
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--color-slider-background);
+  border-radius: 50%;
+  transform: translateY(-40%);
+}
+.main .pricing-component__viewprice .slider__slide::after {
+  position: absolute;
+  content: url("../images/icon-slider.svg");
+  transform: translate(40%, 45%);
+}
+.main .pricing-component__viewprice__views {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--color-blue-text);
+}
+.main .pricing-component__viewprice__price {
+  font-size: 1.6rem;
+  color: var(--color-blue-text);
+}
+.main .pricing-component__viewprice__price .price {
+  color: var(--color-text-cta-bg);
+  font-size: 4rem;
+  font-weight: 800;
+}
+.main .pricing-component__billing {
+  margin-top: 5.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-blue-text);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.main .pricing-component__billing .billing-toggle {
+  margin: 0 1.6rem;
+  height: 2.2rem;
+  width: 4.3rem;
+  background-color: var(--color-toggle-background);
+  border-radius: 1.2rem;
+}
+.main .pricing-component__billing .billing-toggle .toggle-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: white;
+  border-radius: 50%;
+  transform: translateY(25%);
+}
+.main .pricing-component__billing__discount {
+  font-size: 1rem;
+  margin-left: 0.9rem;
+  color: var(--color-discount-text);
+  background-color: var(--color-discount-background);
+  padding: 0.5rem;
+  border-radius: 1.2rem;
+}
+.main .pricing-component__description {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media screen and (max-width: 555px) {
+  .main .pricing-component__description {
+    flex-direction: column;
+  }
+}
+.main .pricing-component__description__list {
+  list-style-type: none;
+  list-style-image: url("../images/icon-check.svg");
+  font-size: 1.2rem;
+  color: var(--color-blue-text);
+}
+.main .pricing-component__description__list .list-item {
+  padding: 0.5rem 1rem;
+}
+.main .pricing-component__description .btn {
+  align-self: center;
+  padding: 1.2rem 4.6rem;
+  border-radius: 3rem;
+  font-size: 1.2rem;
+  border: none;
+  background-color: var(--color-text-cta-bg);
+  color: var(--color-cta-text);
+}
+@media screen and (max-width: 555px) {
+  .main .pricing-component__description .btn {
+    margin-top: 3.2rem;
+  }
+}
+
+.separation {
+  margin-top: 4rem;
+  margin-bottom: 3.2rem;
+  border-top: 1px solid #ecf0fb;
+}
+
+/*# sourceMappingURL=main.css.map */

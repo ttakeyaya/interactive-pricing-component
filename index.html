@@ -15,37 +15,59 @@
 <body>
 
   <header class="header">
-    <h1>Simple, traffic-based pricing</h1>
-    <p>Sign-up for our 30-day trial. No credit card required.</p> 
+    <h1 class="header__title">Simple, traffic-based pricing</h1>
+    <p class="header__text">Sign-up for our 30-day trial. No credit card required.</p> 
   </header>
 
   <main class="main">
     <section class="pricing-component">
-      <div class="pricing-component__price">
-        <p>Pageviews</p>
-        <p>$ /month</p>
+      <div class="pricing-component__viewprice">
+        <p class="pricing-component__viewprice__views">
+          <span class="pageviews">
+            100K
+          </span>
+          Pageviews
+        </p>
+        <!-- slider -->
+        <div class="slider">
+          <div class="slider__slide"></div>
+        </div>
+        <p class="pricing-component__viewprice__price">
+          <span class="price">$16.00</span> 
+          /month
+        </p>
       </div>
-      <div class="slider">
-        <div class="slider__bar"></div>
-      </div>
-      <div class="pricing-component__billing-type">
+
+      
+
+      <div class="pricing-component__billing">
         <p>Monthly Billing</p>
-        <p>Yearly Billing 25% discount</p>
+        <div class="billing-toggle">
+          <div class="toggle-btn"></div>
+        </div>
+        <p>Yearly Billing
+          <span class="pricing-component__billing__discount">
+            25% discount
+          </span>
+        </p>
       </div>
+
+      <hr class="separation">
+
       <div class="pricing-component__description">
-        <ul>
-          <li>Unlimited websites</li>
-          <li>100% data ownership</li>
-          <li>Email reports</li>
+        <ul class="pricing-component__description__list">
+          <li class="list-item">Unlimited websites</li>
+          <li class="list-item">100% data ownership</li>
+          <li class="list-item">Email reports</li>
         </ul>
-        <button>Start my trial</button>
+        <button class="btn">Start my trial</button>
       </div>
     </section>
   </main>
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
   <script src="./js/app.js"></script>
 </body>
 </html>
