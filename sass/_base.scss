@@ -1,0 +1,51 @@
+/** 
+-Import Google Font and Define font variable
+-Define color varibalbes
+-Reset CSS properties(margin, padding)
+-set 1rem to be 10px
+*/
+
+// Google Font
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+
+// Font variable
+$manrope: "Manrope", sans-serif;
+
+// Colors
+:root {
+  --color-full-slider-bar: hsl(174, 77%, 80%);
+  --color-slider-background: hsl(174, 86%, 45%);
+  --color-discount-background: hsl(14, 92%, 95%);
+  --color-discount-text: hsl(15, 100%, 70%);
+  --color-cta-text: hsl(226, 100%, 87%);
+
+  --color-pricing-component-background: hsl (0, 0%, 100%);
+  --color-main-background: hsl(230, 100%, 99%);
+  --color-empty-slider-bar: hsl(224, 65%, 95%);
+  --color-toggle-background: hsl(223, 50%, 87%);
+  --color-blue-text: hsl(225, 20%, 60%);
+  --color-text-cta-bg: hsl(227, 35%, 25%);
+}
+
+// reset
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// 1rem to be 10px
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $manrope;
+  font-size: 1.5rem;
+}
