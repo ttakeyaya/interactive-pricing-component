@@ -51,7 +51,8 @@ body {
   // background-color: var(--color-pricing-component-background);
   background-image: url("../images/bg-pattern.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  // position: fixed;
   background-color: var(--color-main-background);
 
   display: flex;

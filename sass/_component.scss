@@ -6,9 +6,15 @@
   max-width: 39.5rem;
   height: 14.5rem;
   padding-top: 4rem;
+
+  text-align: center;
   &__title {
     font-size: 2.8rem;
     font-weight: 800;
+    padding-bottom: 0.8rem;
+    @media screen and (max-width: 555px) {
+      font-size: 2rem;
+    }
   }
   &__text {
     color: var(--color-blue-text);
@@ -17,27 +23,46 @@
 .main {
   margin-top: 5.4rem;
   .pricing-component {
-    min-width: 54rem;
-    height: 39.7rem;
+    box-shadow: 2px 3px 3px var(--color-blue-text);
+    max-width: 54rem;
+    height: auto;
     background-color: var(--color-main-background);
     @media screen and (max-width: 555px) {
-      max-width: 32.7rem;
+      width: 80vw;
     }
     &__viewprice {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-around;
       align-items: center;
       padding-top: 4rem;
-      padding-bottom: 4rem;
       @media screen and (max-width: 555px) {
         flex-direction: column;
       }
-      .slider {
-        margin: 0 auto;
+      .slider-container {
+        margin-top: 4rem;
         width: 44.4rem;
+        order: 3;
+        @media screen and (max-width: 555px) {
+          order: 2;
+          width: 80%;
+          margin-top: 4.1rem;
+          margin-bottom: 4rem;
+        }
+      }
+      .slider {
+        position: relative;
+        margin: 0 auto;
+        width: 90%;
         height: 0.8rem;
         background-color: var(--color-empty-slider-bar);
-        @media screen and (max-width: 555px) {
+        &::after {
+          position: absolute;
+          top: 0;
+          content: "";
+          width: var(--width);
+          height: 0.8rem;
+          background-color: var(--color);
         }
         &__slide {
           position: relative;
@@ -46,6 +71,7 @@
           background-color: var(--color-slider-background);
           border-radius: 50%;
           transform: translateY(-40%);
+          box-shadow: 1px 16px 10px var(--color-full-slider-bar);
           &::after {
             position: absolute;
             content: url("../images/icon-slider.svg");
@@ -54,17 +80,21 @@
         }
       }
       &__views {
+        order: 1;
         font-size: 1.4rem;
         text-transform: uppercase;
         letter-spacing: 0.2rem;
         color: var(--color-blue-text);
         @media screen and (max-width: 555px) {
+          order: 1;
         }
       }
       &__price {
+        order: 2;
         font-size: 1.6rem;
         color: var(--color-blue-text);
         @media screen and (max-width: 555px) {
+          order: 3;
         }
         .price {
           color: var(--color-text-cta-bg);
@@ -82,7 +112,12 @@
       color: var(--color-blue-text);
       font-size: 1.2rem;
       font-weight: 600;
+      @media screen and (max-width: 555px) {
+        margin-top: 3.4rem;
+      }
+
       .billing-toggle {
+        cursor: pointer;
         margin: 0 1.6rem;
         height: 2.2rem;
         width: 4.3rem;
@@ -93,7 +128,15 @@
           height: 1.4rem;
           background: white;
           border-radius: 50%;
-          transform: translateY(25%);
+          transform: translate(20%, 30%);
+          &.toggled {
+            transform: translate(200%, 30%);
+            transition: transform 0.3s ease-in;
+          }
+        }
+
+        &:hover {
+          background-color: var(--color-full-slider-bar);
         }
       }
       &__discount {
@@ -103,12 +146,18 @@
         background-color: var(--color-discount-background);
         padding: 0.5rem;
         border-radius: 1.2rem;
+        .discount-b {
+          @media screen and (max-width: 404px) {
+            display: none;
+          }
+        }
       }
     }
     &__description {
       display: flex;
       align-items: center;
       justify-content: space-around;
+      padding-bottom: 3.2rem;
       @media screen and (max-width: 555px) {
         flex-direction: column;
       }
@@ -122,13 +171,14 @@
         }
       }
       .btn {
+        cursor: pointer;
         align-self: center;
         padding: 1.2rem 4.6rem;
         border-radius: 3rem;
         font-size: 1.2rem;
         border: none;
         background-color: var(--color-text-cta-bg);
-        color: var(--color-cta-text);
+        color: white;
         @media screen and (max-width: 555px) {
           margin-top: 3.2rem;
         }
@@ -139,5 +189,5 @@
 .separation {
   margin-top: 4rem;
   margin-bottom: 3.2rem;
-  border-top: 1px solid #ecf0fb;
+  border-top: 1px solid #f5f7fc;
 }
