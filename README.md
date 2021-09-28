@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/ttakeyaya/interactive-pricing-component)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site](https://ttakeyaya.github.io/interactive-pricing-component/)
 
 ## My process
 
